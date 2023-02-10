@@ -51,7 +51,7 @@ def below_average_years
   # display each year with movies scoring under 5, with the count of movies
   # scoring under 5 aliased as bad_movies, in descending order
   # hint: use 'select', 'where', 'group', 'order'
-  Movie.select('yr, COUNT(*) AS bad_movies').where('score < 5').group('yr')
+  Movie.select('yr, COUNT(*) AS bad_movies').where('score < 5').group('yr').order('bad_movies')
 end
 
 def alphabetized_actors
