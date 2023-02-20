@@ -75,6 +75,7 @@ def uma_movies
   # hint: use 'select', 'joins', 'where', and 'order'
   Movie.select('movies.id, title, yr')
   .joins(:actors)
-  .where('name = ?', 'Uma Thurman')
+  .where(actors: {name: 'Uma Thurman'})
   .order('yr ASC')
 end
+#.where('name = ?', 'Uma Thurman')
